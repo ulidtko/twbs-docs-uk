@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="google" value="notranslate">
+
+<title>
+  
+    З чого почати &middot; Bootstrap (Українською)
+  
+</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Documentation extras -->
+<link href="../docs-assets/css/docs.css" rel="stylesheet">
+<link href="../docs-assets/css/pygments-manni.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../docs-assets/ico/apple-touch-icon-144-precomposed.png">
+                               <link rel="shortcut icon" href="../docs-assets/ico/favicon.png">
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12395492-7']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Перейти до змісту</a>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="../" class="navbar-brand">Bootstrap</a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="../getting-started">З чого почати</a>
+        </li>
+        <li>
+          <a href="../css">CSS</a>
+        </li>
+        <li>
+          <a href="../components">Компоненти</a>
+        </li>
+        <li>
+          <a href="../javascript">JavaScript</a>
+        </li>
+        <li>
+          <a href="../customize">Компонування</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="../about">Про сайт</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>З чого почати</h1>
+        <p>Продемонстровано в загальному що таке Bootstrap, як завантажувати та користуватись ним, базові шаблони, приклади та інше.</p>
+        <!--div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div><script>var z = document.createElement("script"); z.async = true; z.src = "http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div-->
+
+      </div>
+    </div>
+
+    <!-- Callout for the old docs link -->
+    <div class="bs-old-docs">
+  <div class="container">
+    <strong>
+      <a href="http://getbootstrap.com/2.3.2/">Шукаєте документацію для Bootstrap 2.3.2?</a>
+    </strong>
+    Ми перенесли її на нове місце в процесі розробки Bootstrap 3. <a href="http://blog.getbootstrap.com/">Прогляньте блог</a>, щоб отримати більш детальну інформацію.
+  </div>
+</div>
+
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav">
+              
+                <li>
+  <a href="#download">Завантаження Bootstrap</a>
+  <ul class="nav">
+    <li><a href="#download-compiled">CSS, JS, та шрифти</a></li>
+    <li><a href="#download-additional">Додаткові завантаження</a></li>
+    <li><a href="#download-cdn">Bootstrap CDN</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#whats-included">Що включено</a>
+  <ul class="nav">
+    <li><a href="#whats-included-precompiled">Прекомпільований код</a></li>
+    <li><a href="#whats-included-source">Сирцевий код</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#template">Базовий шаблон</a>
+</li>
+<li>
+  <a href="#examples">Приклади</a>
+</li>
+<li>
+  <a href="#disable-responsive">Блокування чутливості</a>
+</li>
+<li>
+  <a href="#migration">Міграція з 2.x на 3.0 версію</a>
+  <ul class="nav">
+    <li><a href="#migration-classes">Основні зміни класів</a></li>
+    <li><a href="#migration-new">Що нового</a></li>
+    <li><a href="#migration-dropped">Що видалено</a></li>
+    <li><a href="#migration-notes">Додаткові примітки</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#browsers">Підтримка браузерами</a>
+</li>
+<li>
+  <a href="#third-parties">Підтримка третіх сторін</a>
+</li>
+<li>
+  <a href="#accessibility">Доступність</a>
+</li>
+<li>
+  <a href="#license-faqs">Ліцензія FAQs</a>
+</li>
+<li>
+  <a href="#customizing">Компонування Bootstrap</a>
+</li>
+
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9" role="main">
+            <!-- Getting started
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="download">Завантаження Bootstrap</h1>
+    </div>
+    <p class="lead">Bootstrap має кілька простих способів "з чого починати", кожен з яких цікавий у залежності від рівня досвіду та конкретної потреби використання. Прогляньте що підходить найкраще саме вам.</p>
+
+    <h3 id="download-compiled">Зібрані CSS, JS, та шрифти</h3>
+    <p>Завантаження зібраних та мінімізованих версій наших CSS, JavaScript та шрифтів &#8211; хороший старт. Щоправда цей матеріал не містить жодної документації чи сирцевого коду.</p>
+    <p><a class="btn btn-lg btn-primary" href="https://github.com/twbs/bootstrap/releases/download/v3.0.3/bootstrap-3.0.3-dist.zip" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download compiled']);" role="button">Завантажте збірку Bootstrap</a></p>
+
+    <h3 id="download-additional">Додаткові завантаження</h3>
+    <div class="bs-docs-dl-options">
+      <h4>
+        <a href="https://github.com/twbs/bootstrap/archive/v3.0.3.zip" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download source']);">Завантажте сирцевий код</a>
+      </h4>
+      <p>Дане завантаження буде здійснено з GitHub, воно вміщує в собі свіжі версії сирцевого коду Bootstrap LESS та JavaScript.</p>
+      <h4>
+        <a href="https://github.com/twbs/bootstrap" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'GitHub project']);">Клонуйте або зробіть відгалуження через GitHub</a>
+      </h4>
+      <p>Відвідайте нас на GitHub, щоб клонувати або зробити відгалуження проекту Bootstrap.</p>
+      <h4>
+        Встановлення через <a href="http://bower.io">Bower</a>
+      </h4>
+      <p>Щоб встановити та керувати стилями Bootstrap, JavaScript, та їх документацією використовуйте <a href="http://bower.io">Bower</a>.</p>
+      <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>bower install bootstrap
+</code></pre></div>
+    </div>
+
+    <h3 id="download-cdn">Bootstrap CDN</h3>
+    <p>Люди з <a href="http://www.maxcdn.com/">MaxCDN</a> люб'язно надали підтримку CDN для Bootstrap CSS та JavaScript. Просто використовуйте ці лінки <a href="http://www.bootstrapcdn.com/">Bootstrap CDN</a>.</p>
+<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- Свіжа збірка мінімізованих CSS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Додаткові теми --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Свіжа збірка мінімізованої JavaScript --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>
+
+    <div class="bs-callout bs-callout-warning" id="callout-less-compilation">
+      <h4>Компільовані Bootstrap LESS-файли</h4>
+      <p>Якщо ви отримали сирцевий код Bootstrap, вам потрібно компілювати LESS-файли в ньому, щоб перетворити їх на робочі CSS-файли. Для компіляції ми використовуємо та офіційно підтримуємо лише <a href="http://twitter.github.io/recess/">Recess</a>, який у Twitter є CSS помічником заснованим на <a href="http://lesscss.org">less.js</a>.</p>
+    </div>
+  </div>
+
+
+  <!-- File structure
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="whats-included">Що включено</h1>
+    </div>
+    <p class="lead">Bootstrap доступний у двох формах, у яких ви знайдете логічно згруповані каталоги та файли, представлені в зібраному та мінімізованому варіанті.</p>
+
+    <div class="bs-callout bs-callout-danger" id="jquery-required">
+      <h4>Необхідність в jQuery</h4>
+      <p>Будь-ласка майте на увазі, що <strong>всі JavaScript плагіни потребують включення jQuery</strong>, як це показано в <a href="#template">стартовому шаблоні</a>. <a href="https://github.com/twbs/bootstrap/blob/v3.0.3/bower.json">У файлі <code>bower.json</code></a> можна побачити які версії jQuery підтримуються.</p>
+    </div>
+	
+	<h2 id="whats-included-precompiled">Збірка коду Bootstrap</h2>
+    <p>Після завантаження, розархівуйте стиснені каталоги. Ви маєте побачити щось схоже на це:</p>
+	
+<!-- NOTE: This info is intentionally duplicated in the README.
+Copy any changes made here over to the README too. -->
+<div class="highlight"><pre><code class="bash">bootstrap/
+├── css/
+│   ├── bootstrap.css
+│   ├── bootstrap.min.css
+│   ├── bootstrap-theme.css
+│   └── bootstrap-theme.min.css
+├── js/
+│   ├── bootstrap.js
+│   └── bootstrap.min.js
+└── fonts/
+    ├── glyphicons-halflings-regular.eot
+    ├── glyphicons-halflings-regular.svg
+    ├── glyphicons-halflings-regular.ttf
+    └── glyphicons-halflings-regular.woff
+</code></pre></div>
+
+    <p>Це є найбільш базова форма Bootstrap: зібрані файли, для їх швидкої вставки в будь-який веб-проект. Ми надаємо збірку CSS та JS (<code>bootstrap.*</code>), а також її мінімізований варіант (<code>bootstrap.min.*</code>). Як додаткові опції тем Bootstrap &#8211; також надаються шрифти з Glyphicons.</p>
+	<h2 id="whats-included-source">Сирцевий код Bootstrap</h2>
+    <p>Завантаження сирцевого коду Bootstrap вміщує збірку CSS, JavaScript, та шрифтів, а також сирцевий код LESS, JavaScript, та документацію. Точніше, завантаження має такі елементи:</p>
+<div class="highlight"><pre><code class="bash">bootstrap/
+├── less/
+├── js/
+├── fonts/
+├── dist/
+│   ├── css/
+│   ├── js/
+│   └── fonts/
+├── docs-assets/
+├── examples/
+└── *.html
+</code></pre></div>
+</div>
+<p>В каталоги <code>less/</code>, <code>js/</code>, та <code>fonts/</code> вміщено сирцевий код для наших CSS, JS, та значків шрифта (відповідно). Каталог <code>dist/</code> вміщує весь список з верхньої секції завантаження в прекомпільованому вигляді (готовому до використання, на відміну від сирцевого коду). Каталоги <code>docs-assets/</code>, <code>examples/</code>, та всі файли <code>*.html</code> призначені для нашої документації. Окрім цього, будь-який інший включений файл надає підтримку для пакетів, інформацію ліцензування, та розробку.</p>
+
+
+  <!-- Template
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="template">Базовий шаблон</h1>
+    </div>
+    <p class="lead">Можна почати з цього базового шаблону, або з <a href="../getting-started#examples">прикладів, наведених нижче</a>. Ми сподіваємось, що ви будете адаптувати їх під власні потреби.</p>
+
+    <p>Нижче надано HTML-код, який використовує мінімізовану версію Bootstrap-документу.</p>
+<div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Bootstrap 101 Template<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Bootstrap --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;css/bootstrap.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- Вставка для підтримки браузером IE8 елементів HTML5 та медіа запитів --&gt;</span>
+    <span class="c">&lt;!-- ПОПЕРЕДЖЕННЯ: Respond.js не працює, якщо ви проглядаєте сторінку через file:// --&gt;</span>
+    <span class="c">&lt;!--[if lt IE 9]&gt;</span>
+<span class="c">      &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</span>
+<span class="c">      &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</span>
+<span class="c">    &lt;![endif]--&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Привіт, світ!<span class="nt">&lt;/h1&gt;</span>
+
+    <span class="c">&lt;!-- jQuery (потрібно для JavaScript плагінів Bootstrap) --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://code.jquery.com/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="c">&lt;!-- Включення мінімізованої збірки всіх плагінів. --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;js/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+  </div>
+
+
+  <!-- Template
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="examples">Приклади</h1>
+    </div>
+    <p class="lead">На шаблоні, що надано вище, Bootstrap створює багато компонентів. Прогляньте також поради <a href="#customizing">Компонування Bootstrap</a> для підтримки вашого власного варіанту Bootstrap.</p>
+
+    <div class="row bs-examples">
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/starter-template/">
+          <img src="../examples/screenshots/starter-template.jpg" alt="">
+        </a>
+        <h4>Стартовий шаблон</h4>
+        <p>Нічого окрім базового: збірка CSS, JavaScript, та використано контейнер.</p>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/grid/">
+          <img src="../examples/screenshots/grid.jpg" alt="">
+        </a>
+        <h4>Сітки</h4>
+        <p>Декілька прикладів макетів сітки з усіма чотирма рівнями, вкладеності та інше.</p>
+      </div>
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/jumbotron/">
+          <img src="../examples/screenshots/jumbotron.jpg" alt="">
+        </a>
+        <h4>Великий екран</h4>
+        <p>Створення навколо великого екрану навігаційної панелі та декількох колонок, використовуючи базову систему сітки.</p>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/jumbotron-narrow/">
+          <img src="../examples/screenshots/jumbotron-narrow.jpg" alt="">
+        </a>
+        <h4>Вузький екран</h4>
+        <p>Створення більш персоналізованих сторінок через звуження контейнера за промовчанням та великого екрану.</p>
+      </div>
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/navbar/">
+          <img src="../examples/screenshots/navbar.jpg" alt="">
+        </a>
+        <h4>Навігаційне меню</h4>
+        <p>Дуже базовий шаблон, який включає навігаційне меню разом з додатковим вмістом.</p>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/navbar-static-top/">
+          <img src="../examples/screenshots/navbar-static.jpg" alt="">
+        </a>
+        <h4>Статичне навігаційне меню</h4>
+        <p>Дуже базовий шаблон, який включає навігаційне меню разом з додатковим вмістом.</p>
+      </div>
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/navbar-fixed-top/">
+          <img src="../examples/screenshots/navbar-fixed.jpg" alt="">
+        </a>
+        <h4>Фіксоване навігаційне меню</h4>
+        <p>Дуже базовий шаблон, який включає навігаційне меню разом з додатковим вмістом.</p>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/signin/">
+          <img src="../examples/screenshots/sign-in.jpg" alt="">
+        </a>
+        <h4>Сторінка входу</h4>
+        <p>Шаблон користувальницької форми налаштований для простого входу на сайт.</p>
+      </div>
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/sticky-footer/">
+          <img src="../examples/screenshots/sticky-footer.jpg" alt="">
+        </a>
+        <h4>Sticky footer</h4>
+        <p>Закріплення колонтитулу в нижній частині браузера для випадку, коли висота контента сама собою не робить цього.</p>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/sticky-footer-navbar/">
+          <img src="../examples/screenshots/sticky-footer-navbar.jpg" alt="">
+        </a>
+        <h4>Sticky footer with navbar</h4>
+        <p>Прикріплено колонтитул у нижню частину браузера, з нав. меню у верхній частині.</p>
+      </div>
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/justified-nav/">
+          <img src="../examples/screenshots/justified-nav.jpg" alt="">
+        </a>
+        <h4>Вирівняне нав. меню</h4>
+        <p style="font-size: smaller;">Створення компонованого нав. меню з вирівняними лінками. Увага! <a href="../components/#nav-justified">Не дуже дружить з WebKit.</a></p>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/offcanvas/">
+          <img src="../examples/screenshots/offcanvas.jpg" alt="">
+        </a>
+        <h4>Offcanvas</h4>
+        <p>Створення навігаційного off-canvas меню з можливістю перемикання для Bootstrap.</p>
+      </div>
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/carousel/">
+          <img src="../examples/screenshots/carousel.jpg" alt="">
+        </a>
+        <h4>Карусель</h4>
+        <p>Поєднання в шаблоні нав. меню та каруселі, з додаванням деяких нових компонентів.</p>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/non-responsive/">
+          <img src="../examples/screenshots/non-responsive.jpg" alt="">
+        </a>
+        <h4>Нечутливий Bootstrap</h4>
+        <p>Легко вимкнути чутливість Bootstrap <a href="../getting-started/#disable-responsive">у відповідності з нашими документами</a>.</p>
+      </div>
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/theme/">
+          <img src="../examples/screenshots/theme.jpg" alt="">
+        </a>
+        <h4>Теми Bootstrap</h4>
+        <p>Налаштуйте теми Bootstrap щоб урізноманітнити вигляд сторінок.</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Template
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="disable-responsive">Блокування чутливості</h1>
+    </div>
+    <p class="lead">Bootstrap автоматично адаптує перегляд сторінок під декілька розмірів екранів.
+      Тут показано як заблокувати таку можливість, щоб сторінки відображались як в <a href="../examples/non-responsive/">цьому нечутливому шаблоні</a>.</p>
+    <h3>Кроки для блокування чутливого перегляду</h3>
+    <ol>
+      <li>Не створюйте <code>&lt;meta&gt;</code> з іменем <b>viewport</b> як про це сказано в <a href="../css/#overview-mobile">документах CSS</a></li>
+      <li>Скасуйте <code>width</code> в <code>.container</code> для кожного рівня сітки певної ширини, наприкла так <code>width: 970px !important;</code> Переконайтеся, що цей код йде після включення основного коду Bootstrap CSS. При бажанні можна уникнути <code>!important</code> з медіа-запитами або зі спеціальним селектором.</li>
+      <li>Якщо ви використовуєте навігаційне меню, повидаляйте всі меню, які можуть згортатись/розгортатись.</li>
+      <li>Для макету сітки використовуйте класи <code>.col-xs-*</code> як додаток або замість класів medium/large. Не хвилюйтесь, сітка з класом <code>xs</code> (extra-small) масштабується для всіх розмірів екранів.</li>
+    </ol>
+    <p>Вам все ще потрібний Respond.js для IE8 (оскільки наші медіа-запити все ще існують і повинні оброблятись).
+      Це заблокує властивість "мобільність сайту" Bootstrap.</p>
+
+    <h3>Шаблон Bootstrap із заблокованою чутливістю</h3>
+    <p>Ці кроки ми застосували для прикладу. Прогляньте сирцевий код щоб побачити специфічні відмінності.</p>
+    <p>
+      <a href="../examples/non-responsive/" class="btn btn-primary">Проглянути приклад нечутливого шаблону</a>
+    </p>
+  </div>
+
+
+  <!-- Migration
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="migration">Міграція з версії 2.x на 3.0</h1>
+    </div>
+    <p class="lead">Bootstrap 3 немає зворотньої сумісності з версією v2.x. Використовуйте даний опис як основний путівник міграції з v2.x до v3.0. Для більш детального ознайомлення прогляньте оголошення релізу <a href="http://blog.getbootstrap.com/2013/08/19/bootstrap-3-released/">що нового</a> у v3.0.</p>
+
+    <h2 id="migration-classes">Основні зміни класів</h2>
+    <p>В цій таблиці показано відмінності стилів між v2.x та v3.0.</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Bootstrap 2.x</th>
+            <th>Bootstrap 3.0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.container-fluid</code></td>
+            <td><code>.container</code></td>
+          </tr>
+          <tr>
+            <td><code>.row-fluid</code></td>
+            <td><code>.row</code></td>
+          </tr>
+          <tr>
+            <td><code>.span*</code></td>
+            <td><code>.col-md-*</code></td>
+          </tr>
+          <tr>
+            <td><code>.offset*</code></td>
+            <td><code>.col-md-offset-*</code></td>
+          </tr>
+          <tr>
+            <td><code>.brand</code></td>
+            <td><code>.navbar-brand</code></td>
+          </tr>
+          <tr>
+            <td><code>.nav-collapse</code></td>
+            <td><code>.navbar-collapse</code></td>
+          </tr>
+          <tr>
+            <td><code>.nav-toggle</code></td>
+            <td><code>.navbar-toggle</code></td>
+          </tr>
+          <tr>
+            <td><code>.btn-navbar</code></td>
+            <td><code>.navbar-btn</code></td>
+          </tr>
+          <tr>
+            <td><code>.hero-unit</code></td>
+            <td><code>.jumbotron</code></td>
+          </tr>
+          <tr>
+            <td><code>.icon-*</code></td>
+            <td><code>.glyphicon .glyphicon-*</code></td>
+          </tr>
+          <tr>
+            <td><code>.btn</code></td>
+            <td><code>.btn .btn-default</code></td>
+          </tr>
+          <tr>
+            <td><code>.btn-mini</code></td>
+            <td><code>.btn-xs</code></td>
+          </tr>
+          <tr>
+            <td><code>.btn-small</code></td>
+            <td><code>.btn-sm</code></td>
+          </tr>
+          <tr>
+            <td><code>.btn-large</code></td>
+            <td><code>.btn-lg</code></td>
+          </tr>
+          <tr>
+            <td><code>.alert-error</code></td>
+            <td><code>.alert-danger</code></td>
+          </tr>
+          <tr>
+            <td><code>.visible-phone</code></td>
+            <td><code>.visible-xs</code></td>
+          </tr>
+          <tr>
+            <td><code>.visible-tablet</code></td>
+            <td><code>.visible-sm</code></td>
+          </tr>
+          <tr>
+            <td><code>.visible-desktop</code></td>
+            <td>Розділено на <code>.visible-md .visible-lg</code></td>
+          </tr>
+          <tr>
+            <td><code>.hidden-phone</code></td>
+            <td><code>.hidden-xs</code></td>
+          </tr>
+          <tr>
+            <td><code>.hidden-tablet</code></td>
+            <td><code>.hidden-sm</code></td>
+          </tr>
+          <tr>
+            <td><code>.hidden-desktop</code></td>
+            <td>Розділено на <code>.hidden-md .hidden-lg</code></td>
+          </tr>
+          <tr>
+            <td><code>.input-small</code></td>
+            <td><code>.input-sm</code></td>
+          </tr>
+          <tr>
+            <td><code>.input-large</code></td>
+            <td><code>.input-lg</code></td>
+          </tr>
+          <tr>
+            <td><code>.control-group</code></td>
+            <td><code>.form-group</code></td>
+          </tr>
+          <tr>
+            <td><code>.control-group.warning .control-group.error .control-group.success</code></td>
+            <td><code>.form-group.has-*</code></td>
+          </tr>
+          <tr>
+            <td><code>.checkbox.inline</code> <code>.radio.inline</code></td>
+            <td><code>.checkbox-inline</code> <code>.radio-inline</code></td>
+          </tr>
+          <tr>
+            <td><code>.input-prepend</code> <code>.input-append</code></td>
+            <td><code>.input-group</code></td>
+          </tr>
+          <tr>
+            <td><code>.add-on</code></td>
+            <td><code>.input-group-addon</code></td>
+          </tr>
+          <tr>
+            <td><code>.img-polaroid</code></td>
+            <td><code>.img-thumbnail</code></td>
+          </tr>
+          <tr>
+            <td><code>ul.unstyled</code></td>
+            <td><code>.list-unstyled</code></td>
+          </tr>
+          <tr>
+            <td><code>ul.inline</code></td>
+            <td><code>.list-inline</code></td>
+          </tr>
+          <tr>
+            <td><code>.muted</code></td>
+            <td><code>.text-muted</code></td>
+          </tr>
+          <tr>
+            <td><code>.label</code></td>
+            <td><code>.label .label-default</code></td>
+          </tr>
+          <tr>
+            <td><code>.label-important</code></td>
+            <td><code>.label-danger</code></td>
+          </tr>
+          <tr>
+            <td><code>.text-error</code></td>
+            <td><code>.text-danger</code></td>
+          </tr>
+          <tr>
+            <td><code>.table .error</code></td>
+            <td><code>.table .danger</code></td>
+          </tr>
+          <tr>
+            <td><code>.bar</code></td>
+            <td><code>.progress-bar</code></td>
+          </tr>
+          <tr>
+            <td><code>.bar-*</code></td>
+            <td><code>.progress-bar-*</code></td>
+          </tr>
+          <tr>
+            <td><code>.accordion</code></td>
+            <td><code>.panel-group</code></td>
+          </tr>
+          <tr>
+            <td><code>.accordion-group</code></td>
+            <td><code>.panel .panel-default</code></td>
+          </tr>
+          <tr>
+            <td><code>.accordion-heading</code></td>
+            <td><code>.panel-heading</code></td>
+          </tr>
+          <tr>
+            <td><code>.accordion-body</code></td>
+            <td><code>.panel-collapse</code></td>
+          </tr>
+          <tr>
+            <td><code>.accordion-inner</code></td>
+            <td><code>.panel-body</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /.table-responsive -->
+
+    <h2 id="migration-new">Що нового</h2>
+    <p>Ми додали нові елементи та змінили існуючі. Тут продемонстровано нові або оновлені стилі.</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Елемент</th>
+            <th>Опис</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Панелі</td>
+            <td><code>.panel .panel-default</code> <code>.panel-body</code> <code>.panel-title</code> <code>.panel-heading</code> <code>.panel-footer</code> <code>.panel-collapse</code></td>
+          </tr>
+          <tr>
+            <td>Список груп</td>
+            <td><code>.list-group</code> <code>.list-group-item</code> <code>.list-group-item-text</code> <code>.list-group-item-heading</code></td>
+          </tr>
+          <tr>
+            <td>Значки символів</td>
+            <td><code>.glyphicon</code></td>
+          </tr>
+          <tr>
+            <td>Великий екран</td>
+            <td><code>.jumbotron</code></td>
+          </tr>
+          <tr>
+            <td>Дуже маленька сітка (&lt;768px)</td>
+            <td><code>.col-xs-*</code></td>
+          </tr>
+          <tr>
+            <td>Маленька сітка (&ge;768px)</td>
+            <td><code>.col-sm-*</code></td>
+          </tr>
+          <tr>
+            <td>Середня сітка (&ge;992px)</td>
+            <td><code>.col-md-*</code></td>
+          </tr>
+          <tr>
+            <td>Велика сітка (&ge;1200px)</td>
+            <td><code>.col-lg-*</code></td>
+          </tr>
+          <tr>
+            <td>Допоміжні класи чутливості (&ge;1200px)</td>
+            <td><code>.visible-lg</code> <code>.hidden-lg</code></td>
+          </tr>
+          <tr>
+            <td>Зміщення</td>
+            <td><code>.col-sm-offset-*</code> <code>.col-md-offset-*</code> <code>.col-lg-offset-*</code></td>
+          </tr>
+          <tr>
+            <td>Push</td>
+            <td><code>.col-sm-push-*</code> <code>.col-md-push-*</code> <code>.col-lg-push-*</code></td>
+          </tr>
+          <tr>
+            <td>Pull</td>
+            <td><code>.col-sm-pull-*</code> <code>.col-md-pull-*</code> <code>.col-lg-pull-*</code></td>
+          </tr>
+          <tr>
+            <td>Групи введення</td>
+            <td><code>.input-group</code> <code>.input-group-addon</code> <code>.input-group-btn</code></td>
+          </tr>
+          <tr>
+            <td>Керування формою</td>
+            <td><code>.form-control</code> <code>.form-group</code></td>
+          </tr>
+          <tr>
+            <td>Група розмірів кнопки</td>
+            <td><code>.btn-group-xs</code> <code>.btn-group-sm</code> <code>.btn-group-lg</code></td>
+          </tr>
+          <tr>
+            <td>Текст нав. меню</td>
+            <td><code>.navbar-text</code></td>
+          </tr>
+          <tr>
+            <td>Заголовок нав. меню</td>
+            <td><code>.navbar-header</code></td>
+          </tr>
+          <tr>
+            <td>Вирівнювання вкладки / кнопки (pills)</td>
+            <td><code>.nav-justified</code></td>
+          </tr>
+          <tr>
+            <td>Чутливі картинки</td>
+            <td><code>.img-responsive</code></td>
+          </tr>
+          <tr>
+            <td>Контекстні рядки таблиці</td>
+            <td><code>.success</code> <code>.danger</code> <code>.warning</code> <code>.active</code></td>
+          </tr>
+          <tr>
+            <td>Контекстні панелі</td>
+            <td><code>.panel-success</code> <code>.panel-danger</code> <code>.panel-warning</code> <code>.panel-info</code></td>
+          </tr>
+          <tr>
+            <td>Модальні елементи</td>
+            <td><code>.modal-dialog</code> <code>.modal-content</code></td>
+          </tr>
+          <tr>
+            <td>Ескізи картинок</td>
+            <td><code>.img-thumbnail</code></td>
+          </tr>
+          <tr>
+            <td>Калібрування опуклості</td>
+            <td><code>.well-sm</code> <code>.well-lg</code></td>
+          </tr>
+          <tr>
+            <td>Лінки зауваження</td>
+            <td><code>.alert-link</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /.table-responsive -->
+
+
+    <h2 id="migration-dropped">Що видалено</h2>
+    <p>Наступні елементи були видалені або змінені у v3.0.</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Елемент</th>
+            <th>Видалено з 2.x</th>
+            <th>3.0 Еквівалент</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Дія форми</td>
+            <td><code>.form-actions</code></td>
+            <td class="text-muted">Немає еквівалентів</td>
+          </tr>
+          <tr>
+            <td>Форма пошуку</td>
+            <td><code>.form-search</code></td>
+            <td class="text-muted">Немає еквівалентів</td>
+          </tr>
+          <tr>
+            <td>Група інформаційних форм</td>
+            <td><code>.control-group.info</code></td>
+            <td class="text-muted">Немає еквівалентів</td>
+          </tr>
+          <tr>
+            <td>Рідинний контейнер</td>
+            <td><code>.container-fluid</code></td>
+            <td><code>.container</code> (більше немає фіксованої сітки)</td>
+          </tr>
+          <tr>
+            <td>Рідинний рядок</td>
+            <td><code>.row-fluid</code></td>
+            <td><code>.row</code> (більше немає фіксованої сітки)</td>
+          </tr>
+          <tr>
+            <td>Обгортка управління</td>
+            <td><code>.controls</code></td>
+            <td class="text-muted">Немає еквівалентів</td>
+          </tr>
+          <tr>
+            <td>Рядок управління</td>
+            <td><code>.controls-row</code></td>
+            <td><code>.row</code> або <code>.form-group</code></td>
+          </tr>
+          <tr>
+            <td>Рідне нав.меню</td>
+            <td><code>.navbar-inner</code></td>
+            <td class="text-muted">Немає еквівалентів</td>
+          </tr>
+          <tr>
+            <td>Драйвер вертикального нав.меню</td>
+            <td><code>.navbar .divider-vertical</code></td>
+            <td class="text-muted">Немає еквівалентів</td>
+          </tr>
+          <tr>
+            <td>Спадаюче меню</td>
+            <td><code>.dropdown-submenu</code></td>
+            <td class="text-muted">Немає еквівалентів</td>
+          </tr>
+          <tr>
+            <td>Вирівнювання вкладки</td>
+            <td><code>.tabs-left</code> <code>.tabs-right</code> <code>.tabs-below</code></td>
+            <td class="text-muted">Немає еквівалентів</td>
+          </tr>
+          <tr>
+            <td>Список нав.меню</td>
+            <td><code>.nav-list</code> <code>.nav-header</code></td>
+            <td>Немає точного еквівалента, але <a href="../components/#list-group">список груп</a> та <a href="../javascript/#collapse"><code>.panel-group</code></a> є схожими.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /.table-responsive -->
+
+
+    <h2 id="migration-notes">Додаткові примітки</h2>
+    <p>Інші зміни в v3.0 є не настільки очевидними. Базові класи, основні стилі та поведінки були скориговані для гнучкості та нашого підходу <em>мобільність на першому місті</em>. Ось неповний список:</p>
+    <ul>
+      <li>За промовчанням, текстові елементи керування форми тепер отримують мінімальний стиль. Для керування кольором фокуса та закругленими кутами застосовуйте клас <code>.form-control</code>.</li>
+      <li>Текстові елементи керування формою з класом <code>.form-control</code> тепер за промовчанням мають ширину зі значенням 100%. Вкладайте форми вводу в середину <code>&lt;div class="col-*"&gt;&lt;/div&gt;</code> для управління їх шириною.</li>
+      <li><code>.badge</code> більше немає контекстних класів (-success,-primary,і т.д.).</li>
+      <li><code>.btn</code> повинен також використовувати <code>.btn-default</code>, щоб створити кнопку за промовчанням.</li>
+      <li><code>.container</code> та <code>.row</code> тепер рідинні (базуючись на процентах).</li>
+      <li>Картинки віднині нечутливі за промовчанням. Використовуйте <code>.img-responsive</code>, щоб отримати рідинний розмір <code>&lt;img&gt;</code>.</li>
+      <li>Тепер значки <code>.glyphicon</code> базуються на шрифтах. Значкам також необхіді базові та спеціальні класи (наприклад <code>.glyphicon .glyphicon-asterisk</code>).</li>
+      <li>Typeahead було видалено, на користь <a href="http://twitter.github.io/typeahead.js/">Twitter Typeahead</a>.</li>
+      <li>Модальна розмітка істотно змінилась. Тепер блоки із <code>.modal-header</code>, <code>.modal-body</code>, та <code>.modal-footer</code> обгортаються в <code>.modal-content</code> та <code>.modal-dialog</code>, для кращої мобільності стилю та поведінки.</li>
+      <li>Завантаження HTML через модальну опцію <code>remote</code> зараз включено в <code>.modal</code> (раніше включалось в <code>.modal-body</code>). Це дозволяє вам також легко варіювати модальні заголовки та нижній колонтитул, а не лише модальне тіло.</li>
+      <li>JavaScript події мають простори імен (namespaced). Наприклад, щоб обробити подію "show" в модалі, використовуйте <code>'show.bs.modal'</code>. Для закладок "shown" використовуйте <code>'shown.bs.tab'</code>, і т.д.</li>
+    </ul>
+    <p>Більш докладну інформацію стосовно апгрейду до v3.0 проглянте на <a href="http://bootply.com/">Bootply</a>, де учасники обговорень викладають також і частини коду.</p>
+  </div>
+
+
+  <!-- Browser support
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="browsers">Підтримка браузерами</h1>
+    </div>
+    <p class="lead">Bootstrap спроектовано для найкращої роботи в нових браузерах, тобто старі браузери не завжди можуть правильно відображати стилі.</p>
+
+    <h3>Підтримка браузерами</h3>
+    <p>Зокрема, ми підтримуємо останні версії:</p>
+    <ul>
+      <li>Chrome (Mac, Windows, iOS, та Android)</li>
+      <li>Safari (тільки для Mac та iOS, оскільки версія для Windows більше не підтримується)</li>
+      <li>Firefox (Mac, Windows)</li>
+      <li>Internet Explorer</li>
+      <li>Opera (Mac, Windows)</li>
+    </ul>
+    <p>Bootstrap повинен досить добре виглядати та поводитись в Chromium та Chrome для Linux, Firefox для Linux, та Internet Explorer 7, хоча вони не офіційно підтримуються.</p>
+
+    <h3>Internet Explorer 8 та 9</h3>
+    <p>Internet Explorer 8 та 9 також підтримується, однак пам'ятайте, що деякі властивості CSS3 та елементи HTML5 не в повній мірі підтримуються даними браузерами. Крім того, <strong>Internet Explorer 8 потребує використання <a href="https://github.com/scottjehl/Respond">Respond.js</a>, щоб дозволити підтримку медіа запитів.</strong></p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col" class="col-xs-4">Властивість</th>
+            <th scope="col" class="col-xs-4">Internet Explorer 8</th>
+            <th scope="col" class="col-xs-4">Internet Explorer 9</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><code>border-radius</code></th>
+            <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Не підтримується</td>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Підтримується</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>box-shadow</code></th>
+            <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Не підтримується</td>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Підтримується</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>transform</code></th>
+            <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Не підтримується</td>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Підтримується з префіксом <code>-ms</code></td>
+          </tr>
+          <tr>
+            <th scope="row"><code>transition</code></th>
+            <td colspan="2" class="text-danger"><span class="glyphicon glyphicon-remove"></span> Не підтримується</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th scope="row"><code>placeholder</code></th>
+            <td colspan="2" class="text-danger"><span class="glyphicon glyphicon-remove"></span> Не підтримується</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Відвідайте <a href="http://caniuse.com/">Чи можу я використовувати...</a> для більш детального ознайомлення, які властивості CSS3 та HTML5 підтримуються різними браузерами.</p>
+
+    <h3>Internet Explorer 8 та Respond.js</h3>
+    <p>Візміть до уваги наступні застереження, при використанні Respond.js у вашому середовищі для розробки, чи в робочому середовищі для Internet Explorer 8.</p>
+    <h4 id="respond-js-x-domain">Міждоменне зберігання Respond.js та CSS</h4>
+    <p>Якщо ви зберігаєте Respond.js і CSS на різних (суб)доменах (наприклад, на CDN) &#8211; це вимагає деяких додаткових установок. <a href="https://github.com/scottjehl/Respond/blob/master/README.md#cdnx-domain-setup">Ознайомтесь з документацією Respond.js</a> для уточнень.</p>
+    <h4 id="respond-file-proto">Respond.js та <code>file://</code></h4>
+    <p>Через правила безпеки браузера, Respond.js не працює при перегляді через протокол <code>file://</code> (наприклад коли ви відкриваєте HTML файл локально). Щоб протестувати налаштування чутливості в IE8, проглядайте ваші сторінки через HTTP(S). <a href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">Ознайомтесь з документацією Respond.js</a> для уточнень.</p>
+    <h4 id="respond-import">Respond.js та <code>@import</code></h4>
+    <p>Respond.js не працює з CSS, на які посилаються через <code>@import</code>. Зокрема, деякі конфігурації Drupal, як відомо, використовують <code>@import</code>. <a href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">Ознайомтесь з документацією Respond.js</a> для уточнень.</p>
+
+    <h3>Internet Explorer 8 та box-sizing</h3>
+    <p>IE8 не в повній мірі підтримує <code>box-sizing: border-box;</code> при комбінуванні з <code>min-width</code>, <code>max-width</code>, <code>min-height</code>, або <code>max-height</code>. З цієї причини, починаючи з v3.0.1, ми більше не підтримуємо <code>max-width</code> в <code>.container</code>.</p>
+
+    <h3 id="ie-compat-modes">Режим сумісності з IE</h3>
+    <p>Bootstrap не підтримує режиму сумісності в старих версіях Internet Explorer. Щоб бути впевненим, що ви використовуєте останню версію такого режиму для IE, прогляньте чи включений відповідний тег <code>&lt;meta&gt;</code> на вашій сторінці:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content=</span><span class="s">&quot;IE=edge&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+    <p>Цей тег включено у всі сторінки документації та прикладів для забезпечення найкраще-можливого відображення в кожній з версій Internet Explorer.</p>
+    <p>Прогляньте <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge">ці питання на StackOverflow</a> для уточнень.</p>
+
+    <h3 id="ie-10-width">Internet Explorer 10 на Windows 8 та Windows Phone 8</h3>
+    <p>Internet Explorer 10 не відрізняє <strong>ширину пристрою</strong> від <strong>ширини вікна перегляду</strong>, і таким чином не правильно застосовує медіазапити в Bootstrap CSS. Як правило, це можна швидко полагодити додавши наступний код CSS:</p>
+<div class="highlight"><pre><code class="css"><span class="k">@-ms-viewport</span>       <span class="p">{</span> <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span><span class="o">;</span> <span class="p">}</span>
+</code></pre></div>
+    <p>Однак це не працює на пристроях з Windows Phone 8, де відображається загальний вигляд робочого столу, замість вузької області перегляду "для телефону". Щоб вирішити дану проблему вам необхідно <strong>включити наступний код CSS та JavaScript, допоки Microsoft не полагодить це</strong>.</p>
+<div class="highlight"><pre><code class="css"><span class="k">@-webkit-viewport</span>   <span class="p">{</span> <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span><span class="o">;</span> <span class="p">}</span>
+<span class="k">@-moz-viewport</span>      <span class="p">{</span> <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span><span class="o">;</span> <span class="p">}</span>
+<span class="k">@-ms-viewport</span>       <span class="p">{</span> <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span><span class="o">;</span> <span class="p">}</span>
+<span class="k">@-o-viewport</span>        <span class="p">{</span> <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span><span class="o">;</span> <span class="p">}</span>
+<span class="k">@viewport</span>           <span class="p">{</span> <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span><span class="o">;</span> <span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="js"><span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/IEMobile\/10\.0/</span><span class="p">))</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">msViewportStyle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;style&quot;</span><span class="p">)</span>
+  <span class="nx">msViewportStyle</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span>
+      <span class="s2">&quot;@-ms-viewport{width:auto!important}&quot;</span>
+    <span class="p">)</span>
+  <span class="p">)</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;head&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">msViewportStyle</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+    <p>Для отримання додаткової інформації та керівництва з використання, прогляньте <a href="http://timkadlec.com/2013/01/windows-phone-8-and-device-width/">Windows Phone 8 та Device-Width</a>.</p>
+    <p>Щоб привернути увагу, ми включили це в якості прикладів у документації Bootstrap.</p>
+
+    <h3 id="safari-percentages">Процентне округлення в Safari</h3>
+    <p>У версіях Safari v6.1 для OS X та Safari для iOS v7.0.1, при використанні класу сітки <code>.col-*-1</code>, рушій Safari має деякі проблеми з кількістю десяткових знаків. Тобто якщо ви маєте 12 окремих колонок сітки, ви помітете, що вони будуть коротшими в порівнянні з іншими рядами колонок. Тут малощо можна змінити (<a href="https://github.com/twbs/bootstrap/issues/9282">прогляньте #9282</a>), але у вас є кілька варіантів:</p>
+    <ul>
+      <li>Додати <code>.pull-right</code> до вашої останньої колонки в сітці, щоб отримати жорстке вирівнювання по правому краю.</li>
+      <li>Змінити проценти вручну, щоб отримати ідеальне округлення для Safari (більш складно, ніж у першому варіанті)</li>
+    </ul>
+    <p>Ми будемо слідкувати за цією проблемою, і якщо буде більш просте рішення, то оновимо наш код.</p>
+
+    <h3 id="mobile-modals">Модальні вікна та мобільні пристрої</h3>
+    <h4>Переповнення та прокрутка</h4>
+    <p>Підтримка <code>overflow: hidden</code> для елементу <code>&lt;body&gt;</code> досить обмежена в iOS та Android. У браузері цих пристроїв, при прокруткі за межі верхньої або нижньої модальної частини, починає прокручуватись вміст в <code>&lt;body&gt;</code>.</p>
+    <h4>Віртуальна клавіатура</h4>
+    <p>Також зауважте &#8211; якщо ви використовуєте форму вводу в модальному вікні &#8211; iOS має помилку відображення, через яку не оновлюється позиція фіксованих елементів при виклику віртуальної клавіатури. Існують деякі обхідні шляхи для цього, у тому числі &#8211; трансформують елементи через <code>position: absolute</code>, або при виявленні фокусу на елементі викликають таймер і пробують виправити це вручну. Bootstrap не обробляє такі помилки, отже вам потрібно самим це вирішити.</p>
+
+    <h3 id="browser-zoom">Браузерне масштабування</h3>
+    <p>При зміні розміру сторінки, неминуче виявляється некоректне відображення деяких елементів: це стосується і Bootstrap, і решти веб-документу. У залежності від конкретного випадку, ми можемо виправити це (при потребі ви можете відкрити відповідний запит, але спочатку необхідно пошукати чи немає аналогічних запитів). Тим не менш, але як правило ми ігноруємо їх, оскільки вони часто не мають прямого вирішення, окрім створення обхідних шляхів у вигляді хаків (hacky).</p>
+  </div>
+
+
+  <!-- Third party support
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="third-parties">Підтримка третіх сторін</h1>
+    </div>
+    <p class="lead">Хоча ми офіційно не підтримуємо сторонні плагіни або доповнення, ми пропонуємо кілька корисних порад, які допоможуть уникнути можливих проблем у ваших проектах.</p>
+
+    <h3>Розмірність блоків</h3>
+    <p>Деяке стороннє програмне забезпечення, включно з Google Maps та Google Custom Search Engine, конфліктують з Bootstrap через <code>* { box-sizing: border-box; }</code>, тобто правило, котре створює <code>padding</code> (відступи) в підсумку не впливає на ширину елемента. Дізнайтесь більше про це: <a href="http://css-tricks.com/box-sizing/">box model and sizing at CSS Tricks</a>.</p>
+    <p>В залежності від контексту, ви можете перевизначити box-sizing лише там, де це необхідно (Варіант 1), або скинути його для цілих областей (Варіант 2).</p>
+<div class="highlight"><pre><code class="css"><span class="c">/* Скидання box-sizing</span>
+<span class="c"> *</span>
+<span class="c"> * Скидання на окремому елементі чи перевизначення області для уникнення конфлікту через</span>
+<span class="c"> * глобальне налаштування блочної моделі Bootstrap. Два варіанти: індивідуальне перевизначення та</span>
+<span class="c"> * скидання &#8211; є доступними у вигляді простого CSS та некомпільованого LESS формату.</span>
+<span class="c"> */</span>
+
+<span class="c">/* Варіант 1A: Перевизначення окремого елемента блочної моделі через CSS */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">content</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+     <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">content</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+          <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">content</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Варіант 1B: Перевизначення окремого елемента блочної моделі використовуючи Bootstrap LESS mixin */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="o">.</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="p">(</span><span class="k">content</span><span class="o">-</span><span class="n">box</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* Варіант 2A: Скидання цілої області за допомогою CSS */</span>
+<span class="nc">.reset-box-sizing</span><span class="o">,</span>
+<span class="nc">.reset-box-sizing</span> <span class="o">*,</span>
+<span class="nc">.reset-box-sizing</span> <span class="o">*</span><span class="nd">:before</span><span class="o">,</span>
+<span class="nc">.reset-box-sizing</span> <span class="o">*</span><span class="nd">:after</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">content</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+     <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">content</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+          <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">content</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Варіант 2B: Скидання цілої області за допомогою налаштування LESS mixin */</span>
+<span class="nc">.reset-box-sizing</span> <span class="p">{</span>
+  <span class="o">&amp;,</span>
+  <span class="o">*,</span>
+  <span class="o">*:</span><span class="n">before</span><span class="o">,</span>
+  <span class="o">*:</span><span class="n">after</span> <span class="p">{</span>
+    <span class="o">.</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="p">(</span><span class="k">content</span><span class="o">-</span><span class="n">box</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="o">.</span><span class="n">reset</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+  </div>
+
+
+  <!-- Accessibility
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="accessibility">Доступність</h1>
+    </div>
+    <p class="lead">Bootstrap слідує загальним веб-стандартам, та при мінімальних додаткових зусиллях, може бути використаний для створення сайтів, доступних через <abbr title="Assistive Technology (Допоміжні Технології)" class="initialism">AT</abbr>.</p>
+
+    <h3>Пропуск навігації</h3>
+    <p>Якщо ваше навігаційне меню має багато лінків та знаходиться перед головним вмістом в DOM, додайте лінк <code>Перейти до головного вмісту</code> безпосередньо після тегу <code>&lt;body&gt;</code>. <a href="http://a11yproject.com/posts/skip-nav-links/">(прочитайте чому)</a></p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#content&quot;</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Перейти до головного вмісту<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span> <span class="na">id=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+    Головний вміст сторінки.
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div>
+
+    <h3>Вкладені заголовки</h3>
+    <p>При вкладанні заголовків (<code>&lt;h1&gt;</code> &#8211; <code>&lt;h6&gt;</code>), ваш основний заголовок документа повинен бути <code>&lt;h1&gt;</code>. Наступні заголовки повинні логічно вибудовуватись використовуючи <code>&lt;h2&gt;</code> &#8211; <code>&lt;h6&gt;</code>, щоб програма, яка зчитує заголовки, могла сконструювати зміст сторінки.</p>
+    <p>Дізнатесь більше про <a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/Section508/">HTML CodeSniffer</a> та <a href="http://accessibility.psu.edu/headings">Penn State's AccessAbility</a>.</p>
+
+    <h3>Додаткові ресурси</h3>
+    <ul>
+      <li><a href="https://github.com/squizlabs/HTML_CodeSniffer">"HTML Codesniffer" bookmarklet for identifying accessibility issues</a></li>
+      <li><a href="http://a11yproject.com/">The A11Y Project</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Accessibility">MDN accessibility documentation</a></li>
+    </ul>
+  </div>
+
+
+  <!-- License FAQs
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="license-faqs">Ліцензія FAQs</h1>
+    </div>
+    <p class="lead">Bootstrap випущено під ліцензією Apache 2 та має авторське право Twitter 2013. Зведена до менших частин, вона може бути описана наступними умовами.</p>
+
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <h4>Вона дозволяє:</h4>
+        <ul>
+          <li>Вільно завантажувати та використовувати Bootstrap цілком або частинами, для особистих, корпоративних чи комерційних цілей</li>
+          <li>Використовувати Bootstrap в пакетах або в дистрибуції, яку ви самі створюєте</li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-6">
+        <h4>Вона забороняє:</h4>
+        <ul>
+          <li>Поширювати будь-яку частину Bootstrap без посилання на джерело</li>
+          <li>Використовувати будь-які позначки, які належать Twitter, щоб у такий спосіб явно чи неявно продемонструвати начебто Twitter схвалює ваш дистрибутив</li>
+          <li>Використовувати будь-які позначки, які належать Twitter, щоб у такий спосіб явно чи неявно продемонструвати начебто ви створюєте програмне забезпечення за запитом Twitter</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <h4>Вона вимагає:</h4>
+        <ul>
+          <li>Включення копії даної ліцензії в будь-який дистрибутив, який вміщує Bootstrap</li>
+          <li>Дати чітке привласнення Twitter'у в будь-якому дистрибутиві, що вміщує Bootstrap</li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-6">
+        <h4>Вона не вимагає:</h4>
+        <ul>
+          <li>Включати сирцевий код Bootstrap itself, or of any modifications you may have made to it, in any redistribution you may assemble that includes it</li>
+          <li>Надавати зміни, що ви внесли до Bootstrap для демонстрації в проекті Bootstrap (хоча зворотній зв'язок заохочується)</li>
+        </ul>
+      </div>
+    </div>
+    <p>Повна версія ліцензії Bootstrap розміщується <a href="https://github.com/twbs/bootstrap/blob/master/README.md">в проекті репозиторію</a>.</p>
+  </div><!-- /.bs-docs-section -->
+
+
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="customizing">Компонування Bootstrap</h1>
+    </div>
+    <p class="lead">Bootstrap найкраще обслуговувати, коли в середовищі розробки розділяти кожну залежність від нього на окремі версії. Дотримуючись цього правила &#8211; у майбутньому ваш апгрейд до нової версії Bootstrap буде легким.</p>
+
+    <p>Після того як ви завантажили та підключили стилі і скрипти Bootstrap, ви можете налаштовувати їх компоненти. Щоб це зробити, просто створіть нову таблицю стилів (LESS, якщо бажаєте, або просто CSS).</p>
+
+    <div class="bs-callout bs-callout-info">
+      <h4>Просту збірку, чи мінімізовану?</h4>
+      <p>Якщо ви не плануєте читати CSS, вибирайте їх мінімізовану версію. Це той же код, просто компактніший. Мінімізовані таблиці стилів використовують меншу ширину каналу, що є добре, особливо в робочому (production) середовищі.</p>
+    </div>
+
+    <p>І надалі, включайте будь-які компоненти Bootstrap та HTML вміст, для створення шаблонів сторінок вашого сайту.</p>
+
+    <h3>Компонування складових</h3>
+    <p>Ви можете налаштовувати компоненти в різній мірі, але в більшості виокремлюються дві категорії: <em>легке налаштування</em> та <em>повна перебудова</em>. Є багато різних прикладів від третіх сторін, які дозволяють реалізувати обидві категорії.</p>
+    <p>Ми визначаємо <em>легке налаштування</em> як поверхневі зміни, наприклад, зміни кольору та шрифту для існуючих компонентів Bootstrap. Прикладом легкого налаштування є <a href="http://translate.twitter.com">Twitter Translation Center</a> (написаний <a href="https://twitter.com/mdo">@mdo</a>). Давайте подивимось як реалізується налаштування кнопки <code>.btn-ttc</code> на цьому сайті.</p>
+    <p>Для створення основи кнопки Bootstrap необхідно лише один клас <code>.btn</code>. Тепер ми розширюватимемо стиль <code>.btn</code> новим модифікованим класом <code>.btn-ttc</code>, який пізніше створимо. Це дозволяє змінювати вигляд при мінімальному зусиллі.</p>
+    <p>Наша кнопка, яку ми налаштовуємо, буде мати приблизно такий код:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-ttc&quot;</span><span class="nt">&gt;</span>Зберегти зміни<span class="nt">&lt;/button&gt;</span>
+</code></pre></div>
+    <p>Зауважте як <code>.btn-ttc</code> додається до стандартного класу <code>.btn</code>.</p>
+
+    <p>Щоб завершити налаштування, додайте наступний користувальницький код стилів CSS:</p>
+
+<div class="highlight"><pre><code class="css"><span class="c">/* Користувальницька кнопка</span>
+<span class="c">-------------------------------------------------- */</span>
+
+<span class="c">/* Перевизначення базового стилю .btn */</span>
+<span class="c">/* Встановлення текстових та фонових змін для трьох основних станів: default, hover, та active (при кліку). */</span>
+<span class="nc">.btn-ttc</span><span class="o">,</span>
+<span class="nc">.btn-ttc</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nc">.btn-ttc</span><span class="nd">:active</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+  <span class="k">text-shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">-1px</span> <span class="m">0</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">25</span><span class="p">);</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#007da7</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Встановлення користувальницького градієнту кольору */</span>
+<span class="c">/* Зауважте: вам необхідно буде включати всі відповідні градієнти для різних браузерів та стандартів. */</span>
+<span class="nc">.btn-ttc</span> <span class="p">{</span>
+  <span class="k">background-repeat</span><span class="o">:</span> <span class="k">repeat-x</span><span class="p">;</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">top</span><span class="o">,</span> <span class="m">#009ED2</span> <span class="m">0</span><span class="o">%,</span> <span class="m">#007DA7</span> <span class="m">100</span><span class="o">%</span><span class="p">);</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="c">/* Оголошення hover */</span>
+<span class="c">/* Легке оголошення hover &#8211; просте бідняття градієнту на незначну величину. Додайте інші коригування, якщо необхідно. */</span>
+<span class="nc">.btn-ttc</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-15px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+    <p>Коротше кажучи: Проглянте джерело стилю та продублюйте селектори для модифікації.</p>
+    <p><strong>В підсумку, базовий робочий процес буде мати такі пункти:</strong></p>
+    <ul>
+      <li>Знайдіть код у збірці CSS Bootstrap для кожного елементу, котрий хочете налаштувати.</li>
+      <li>Скопіюйте компоненти селектора та стилі і вставте їх до ваших стилів, які налаштовуєте. Наприклад, щоб налаштувати фон навігаційного меню, просто скопіюйте опис стилю <code>.navbar</code>.</li>
+      <li>У ваших стилях, які налаштовуєте, редагуйте CSS, які ви щойно скопіювали з Bootstrap. Не потрібно дописувати додаткові класи, чи додавати в кінці <code>!important</code>. Просто збережіть їх.</li>
+      <li>Прогляньте що у вас вийшло і при потребі повторіть попередні кроки.</li>
+    </ul>
+    <p>Як тільки ви навчитеся робити легке налаштування, візуальна повна перебудова буде такою ж простою. Наприклад для сайту <a href="http://yourkarma.com">Karma</a>, котрий використовує Bootstrap зі скиданням CSS та важкими модифікаціями, потрібно добре попрацювати. Але тут використовується той же принцип: включаються спочатку стилі Bootstrap за промовчанням, потім застосовується їх налаштування.</p>
+
+    <div class="bs-callout bs-callout-info">
+      <h4>Альтернативні методи налаштування</h4>
+      <p>Хоча не рекомендується для користувачів, погано знайомих з Bootstrap, все ж ви можете використовувати один з двох альтернативних методів для налаштування. Перший полягає в зміні коду файлу <code>.less</code> (супер-ускладнює апгрейд), другий &#8211; створення мапінгу між LESS кодом та <a href="http://ruby.bvision.com/blog/please-stop-embedding-bootstrap-classes-in-your-html">вашими власними класами через mixins</a>. На даний момент, жоден з цих методів тут покищо не документовано.</p>
+    </div>
+
+    <h3>Видалення непотрібного коду</h3>
+        <p>Не потрібно для кожного сайту все робити за допомогою Bootstrap, особливо у виробничому (production) середовищі, де потрібно оптимізувати пропускну спроможність. Ми рекомендуємо повидаляти все зайве використовуючи наш <a href="../customize/">Компонувальник</a>.</p>
+    <p>Для цього просто познімайте галочки з усіх компонентів, функцій, або груп компонентів, які вам не потрібні. Завантажуйте нові змінені файли та замінюйте ними файли Bootstrap за промовчанням. Ви отримаєте свіжі файли Bootstrap, але без функцій, котрі ви порахували зайвими. Кожна така компонована збірка містить компільовані та мінімізовані версії.</p>
+
+  </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-footer" role="contentinfo">
+      <div class="container">
+        <!--div class="bs-social">
+  <ul class="bs-social-buttons">
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twbs&amp;repo=bootstrap&amp;type=watch&amp;count=true" width="100" height="20" title="Star on GitHub"></iframe>
+    </li>
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twbs&amp;repo=bootstrap&amp;type=fork&amp;count=true" width="102" height="20" title="Fork on GitHub"></iframe>
+    </li>
+    <li class="follow-btn">
+      <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
+    </li>
+    <li class="tweet-btn">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://getbootstrap.com/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
+    </li>
+  </ul>
+</div-->
+
+
+        <p>Спроектовано та побудовано з усією любов'ю у світі, авторами: <a href="http://twitter.com/mdo" target="_blank">@mdo</a> та <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Код ліцензовано під <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, документацію під <a href="http://creativecommons.org/licenses/by/3.0/deed.uk">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li>Поточна v3.0.3</li>
+          <li class="muted">&middot;</li>
+          <li><a href="../2.3.2/">Документація для Bootstrap 2.3.2</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="http://blog.getbootstrap.com">Блог</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/twbs/bootstrap/issues?state=open">Питання</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/twbs/bootstrap/releases">Релізи</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../dist/js/bootstrap.js"></script>
+
+<script src="../docs-assets/js/holder.js"></script>
+
+<script src="../docs-assets/js/application.js"></script>
+<script type="text/javascript" src="/js/phpjs.js"></script>
+<script type="text/javascript" src="/js/functions.js"></script>
+
+
+<!--script>
+  window.twttr = (function (d,s,id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+    js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+  }(document, "script", "twitter-wjs"));
+</script-->
+
+<!-- Analytics
+================================================== -->
+<!--script>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script-->
+
+
+  </body>
+</html>
