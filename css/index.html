@@ -302,7 +302,7 @@
     <p class="lead">Bootstrap має чутливу, "найперше &#8211; мобільну" рідинну систему сітки, яка масштабується до 12 колонок відповідно до розміру пристрою або до розміру оглядового вікна. Вона включає <a href="#grid-example-basic">предвизначені класи</a> для легкого налаштування шаблонів, а також потужні <a href="#grid-less">mixins для генерації більш семантичних шаблонів</a>.</p>
 
     <h3 id="grid-intro">Ознайомлення</h3>
-    <p>Система сітки використовується для створення сторінок шаблону через серію рядків та колонок, які мають вміст. Далі показано як працює система сітки Bootstrap:</p>
+    <p>Система сітки використовується для створення сторінок шаблону через серію рядків та колонок із вмістом. Далі показано як працює система сітки Bootstrap:</p>
     <ul>
       <li>Рядки повинні розміщуватись всередині <code>.container</code> (фіксованої ширини) або <code>.container-fluid</code> (на всю ширину) для правильного вирівнювання та відступів.</li>
       <li>Використовуйте рядки для створення горизонтальних груп колонок.</li>
@@ -326,13 +326,13 @@
 <span class="c">/* Невеликі пристрої (планшети, 768px та вище) */</span>
 <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">@screen-sm-min</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 
-<span class="c">/* Середнього розміру пристрої (настільні комп'ютери, 992px та вище) */</span>
+<span class="c">/* Пристрої середнього розміру (настільні комп'ютери, 992px та вище) */</span>
 <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">@screen-md-min</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 
 <span class="c">/* Великі пристрої (великі настільні комп'ютери, 1200px та вище) */</span>
 <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">@screen-lg-min</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 </code></pre></div>
-    <p>Ми іноді розширюємо ці медіа запити, щоб включити <code>max-width</code> для обмеження CSS вузьким переліком пристроїв.</p>
+    <p>Ми іноді додаємо в ці медіа запити <code>max-width</code>, щоб обмежити певний CSS вужчим переліком пристроїв.</p>
 <div class="highlight"><pre><code class="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="k">@screen-xs-max</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">@screen-sm-min</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="k">@screen-sm-max</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">@screen-md-min</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="k">@screen-md-max</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
@@ -372,7 +372,7 @@
           </tr>
           <tr>
             <th style="font-size: smaller;">Ширина контейнера</th>
-            <td>Немає (автоматично)</td>
+            <td>Немає (автоматична)</td>
             <td>750px</td>
             <td>970px</td>
             <td>1170px</td>
@@ -390,7 +390,7 @@
           </tr>
           <tr>
             <th style="font-size: smaller;">Макс. ширина колонки</th>
-            <td class="text-muted">Автоматично</td>
+            <td class="text-muted">Автоматична</td>
             <td>60px</td>
             <td>78px</td>
             <td>95px</td>
